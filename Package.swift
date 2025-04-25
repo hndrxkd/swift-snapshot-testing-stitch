@@ -1,4 +1,4 @@
-// swift-tools-version:5.2
+// swift-tools-version:6.0
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "SnapshotTestingStitch",
     platforms: [
-        .iOS(.v13),
+        .iOS(.v16),
     ],
     products: [
         .library(
@@ -15,12 +15,10 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(name: "swift-snapshot-testing",
-                 url: "https://github.com/pointfreeco/swift-snapshot-testing.git",
-                 from: "1.10.0"),
-        .package(name: "SnapshotTestingHEIC",
-                 url: "https://github.com/alexey1312/SnapshotTestingHEIC.git",
-                 from: "1.2.1"),
+        .package(url: "https://github.com/pointfreeco/swift-snapshot-testing.git",
+                 from: "1.18.3"),
+        .package(url: "https://github.com/alexey1312/SnapshotTestingHEIC.git",
+                 from: "1.5.1"),
     ],
     targets: [
         .target(
